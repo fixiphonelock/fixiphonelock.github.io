@@ -3,10 +3,10 @@
 # fixiphonelock.github.io
 # fix full iphone lock Nhat
 
-cd "/var/mobile/Library/Carrier Bundles/Overlay"
-for fl in *.plist; do
-	sed '/<key>SupportSupplementaryServices[^<]*<\/key>/,/>/s/false/true/g' "$fl" | tee "$fl"
-done
+#cd "/var/mobile/Library/Carrier Bundles/Overlay"
+#for fl in *.plist; do
+#	sed '/<key>SupportSupplementaryServices[^<]*<\/key>/,/>/s/false/true/g' "$fl" | tee "$fl"
+#done
 
 chmod -w "/var/mobile/Library/Carrier Bundles/Overlay"
 # tim xoa
