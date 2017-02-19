@@ -3,13 +3,6 @@
 # fix full iphone lock Nhat
 
 cd "/var/mobile/Library/Carrier Bundles/Overlay"
-for fl in *.plist; do
-	cp "$fl" "$fl.bak"
-	result="$(sed '/<key>SupportSupplementaryServices[^<]*<\/key>/,/>/s/false/true/g' "$fl.bak")"
-	if [ "${#result}" -gt "10" ] ; then
-		sed '/<key>SupportSupplementaryServices[^<]*<\/key>/,/>/s/false/true/g' "$fl.bak" > "$fl"
-	fi
-done
 
 chmod -w "/var/mobile/Library/Carrier Bundles/Overlay"
 # tim xoa
@@ -46,8 +39,8 @@ mkdir -p "/System/Library/Carrier Bundles/iPhone/Tmobile_US.bundle/"
 rm -rf "/System/Library/Carrier Bundles/iPhone/ATT_US.bundle/"
 mkdir -p "/System/Library/Carrier Bundles/iPhone/ATT_US.bundle/"
 
-rm -rf "/System/Library/Carrier Bundles/iPhone/Unknown.bundle/"
-cp -R "/System/Library/Carrier Bundles/iPhone/Viettel_vn.bundle/" "/System/Library/Carrier Bundles/iPhone/Unknown.bundle/"
+#rm -rf "/System/Library/Carrier Bundles/iPhone/Unknown.bundle/"
+#cp -R "/System/Library/Carrier Bundles/iPhone/Viettel_vn.bundle/" "/System/Library/Carrier Bundles/iPhone/Unknown.bundle/"
 
 echo "127.0.0.1 appldnld.apple.com" >> /etc/hosts
 chmod -w /etc/hosts
